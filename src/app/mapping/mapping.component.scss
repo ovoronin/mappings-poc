@@ -1,0 +1,32 @@
+.mapping {
+	width: 100%;
+	display: flex;
+
+	.title {
+		font-size: 20px;
+		margin: 10px;
+	}
+
+	.mapping-tree {
+		flex: 2;
+	}
+
+	.mappings {
+		flex: 3;
+	}
+
+	.mapping-table {
+		.mapping-row {
+			font-size: 14px;
+			padding: 16px;
+
+			&.selected {
+				background-color: aliceblue;
+			}
+		}
+	}
+
+	.buttons {
+		padding-top: 16px;
+	}
+}

@@ -1,0 +1,36 @@
+<div class="mapping">
+	<div class="mapping-tree">
+		<div class="title">Source</div>
+		<app-mapping-tree
+			#sourceTreeComponent
+			[data]="sourceTree"
+			[isSelected]="isSelectedSource"
+			[isMapped]="isMappedSource"
+			(onChange)="sourceTreeChanged($event)"
+		></app-mapping-tree>
+	</div>
+
+	<div class="mappings">
+		<div class="title">Mappings</div>
+		<div class="mapping-table">
+			<div class="mapping-row" *ngFor="let mapping of mappings" (click)="toggleMapping(mapping)" [class.selected]="this.selectedMapping == mapping">
+				{{ mapping.source.name }} => {{ mapping.target.name }}
+			</div>
+		</div>
+		<div class="buttons">
+			<button mat-button [disabled]="!(sourceNode && targetNode)" (click)="addMapping()">Add Mapping</button>
+			<button mat-button [disabled]="!selectedMapping" (click)="deleteMapping()">Delete Mapping</button>
+		</div>
+	</div>
+
+	<div class="mapping-tree">
+		<div class="title">Target</div>
+		<app-mapping-tree
+			#targetTreeComponent
+			[data]="targetTree"
+			[isSelected]="isSelectedTarget"
+			[isMapped]="isMappedTarget"
+			(onChange)="targetTreeChanged($event)"
+		></app-mapping-tree>
+	</div>
+</div>
