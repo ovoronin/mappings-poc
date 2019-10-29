@@ -15,14 +15,13 @@
 		flex: 3;
 	}
 
-	.mapping-table {
-		.mapping-row {
-			font-size: 14px;
-			padding: 16px;
+	.mapping-row {
+		font-size: 14px;
+		padding: 16px;
+		cursor: pointer;
 
-			&.selected {
-				background-color: aliceblue;
-			}
+		&.selected {
+			background-color: aliceblue;
 		}
 	}
 

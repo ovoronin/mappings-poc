@@ -4,12 +4,13 @@
 		*matTreeNodeDef="let node"
 		matTreeNodePadding
 		(click)="toggle(node)"
+		class="leaf"
 		[class.selected]="node.dataNode.selected"
 		[class.disabled]="isMapped(node.dataNode)"
 		[class.selected-mapping]="isSelected(node.dataNode)"
 	>
     <!-- use a disabled button to provide padding for tree leaf -->
-    <button mat-icon-button disabled></button>
+    <div class="padding"></div>
     {{node.name}}
   </mat-tree-node>
   <!-- This is the tree node template for expandable nodes -->
